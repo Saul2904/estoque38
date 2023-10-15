@@ -1,0 +1,30 @@
+{
+  "name": "estoque38",
+  "version": "1.0.0",
+  "description": "Controle de estoque do CD 38",
+  "main": "index.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/server.mjs",
+    "dev": "nodemon ./src/server.mjs"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.11.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "keywords": [
+    "estoque",
+    "controle",
+    "ti",
+    "informática"
+  ],
+  "author": "Saul Ezequiel Ambrosio",
+  "license": "ISC"
+}
