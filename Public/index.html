@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./CSS/style.css">
     <link rel="shortcut icon" href="../PROJETO_CD_38/IMG/logo.png" type="image/x-icon">
     <script defer src="./js/script.js"></script>
-    <script defer src="./js/validate.js"></script>
+    <!--<script defer src="./js/validate.js"></script>-->
     <title>Home</title>
 </head>
 <body>
@@ -18,10 +18,18 @@
                 <ul class="nav-list">
                     <li><a href="./entrada.html">Entrada</a></li>
                     <li><a href="./saida.html">Saida</a></li>
-                    <li><a href="./cadastro.html">Cadastro de Equipamentos</a></li>
+                    <li><div class="dropdown">
+                      <button class="dropbtn">Equipamento</button>
+                      <div class="dropdown-content">
+                        <a href="#">Marca</a>
+                        <a href="#">Tipo</a>
+                        <a href="#">Produto</a>
+                      </div></div></li>
                     <li><a href="./consulta.html">Consulta Estoque</a></li>
                     <button type="button" id="logout" class="logout"><li><i class="fa fa-sign-out" aria-hidden="true"></i></li></button>
+                   
                 </ul>
+                
              </nav>
     </header>
                 
