@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./CSS/style.css">
+    <script src="./js/script.js"></script>
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <!--<script defer src="./js/validate.js"></script>-->
+    <!--<script src="./js/equipamento.js"></script>-->
+
+
+    <title>Cadastro Equipamentos</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+                <a href="./index.html"><img src="./IMG/logo.png" alt="Logo" class="logo"></a>
+                  <ul class="nav-list">
+                    <li><a href="#">Cadastro Tipo</a></li>
+                    <li><a href="./index.html"><i class="fas fa-home"></i></a></li>
+                  </ul>
+            </nav>
+        </div>
+    </header>
+        <main>
+            
+            <h1>Tipo de Equipamentos</h1>
+            
+            <form id="equipamentoForm">
+               
+                <label for="tipo">Tipo:</label>
+                <select name="tipo">
+                    <option value=1>Micro</option>
+                    <option value=2>Impressora</option>
+                    <option value=3>Switch</option>
+                    <option value=4>Monitor</option>
+                </select>
+                <!--<input type="text" id="tipo" name="tipo" required><br>-->
+              
+              
+                <button type="button" onclick="adicionarTipo()">Adicionar Tipo</button>
+              </form>
+
+            <h2>Equipamentos Adicionados:</h2>
+            <table id="tipoTable">
+            <thead>
+                <tr>
+                <th>Tipo</th>
+                <th>Patrimônio</th>
+                <th>Série</th>
+                <th>Observação</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+            </table> 
+        </main>
+</body>
+</html>

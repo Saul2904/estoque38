@@ -60,12 +60,12 @@ padding-inline: 36px;
 
 }
 .nav-list i:hover{
-  color: #333;
+  color: #e6e5e5;
   transition: 0.4s;
 
 }
 .nav-list a:hover{
-  color: #333;
+  color: #e6e5e5;
   transition: 0.4s;
 
 }
@@ -115,8 +115,8 @@ padding-inline: 36px;
 
 }
 .dropbtn:hover{
-  color: #000;
-  transition: 0.3s;
+  color: #e6e5e5;
+ 
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -139,7 +139,7 @@ padding-inline: 36px;
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd; border-radius: 20px;}
+.dropdown-content a:hover {background-color: #77b8ea; border-radius: 20px;}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {display: block;}
@@ -152,13 +152,10 @@ padding-inline: 36px;
   content: '\f107'; /* Código unicode para uma seta (pode ser ajustado) */
   font-family: FontAwesome; /* Você pode usar uma fonte de ícones, como FontAwesome */
   margin-left: 10px; /* Espaçamento entre o texto e a seta */
-  transition: transform 0.3s; /* Transição suave para a rotação */
+  
 }
 
-/* Rotacionando a seta quando o dropdown está aberto */
-.dropdown:hover .dropbtn::after {
-  transform: scaleY(-1);
-}
+
 @media (max-width: 785px) {
   .hamburger {
     display: block;
@@ -183,7 +180,7 @@ padding-inline: 36px;
  
   }
   .nav-list a:hover{
-    color: #121314;
+    color: #e6e5e5;
 
 
   }
@@ -212,7 +209,7 @@ padding-inline: 36px;
   }
   .nav-list i:hover{
     transition: 0.1s;
-    color: #0000008e;
+    color: #e6e5e5;
   }
   footer{
     display: none;

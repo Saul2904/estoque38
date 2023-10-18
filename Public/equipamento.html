@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./CSS/style.css">
+    <script src="./js/script.js"></script>
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <!--<script defer src="./js/validate.js"></script>-->
+    <script src="./js/equipamento.js"></script>
+
+
+    <title>Cadastro Equipamentos</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="./index.html"><img src="./IMG/logo.png" alt="Logo" class="logo"></a>
+            <ul class="nav-list">
+                <li><a href="#">Cadastro de Equipamentos</a></li>
+                <li><a href="./index.html"><i class="fas fa-home"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Formulário de Cadastro de Equipamentos</h1>
+        
+        <form id="equipamentoForm">
+            <label for="produto">Produto:</label>
+            <select name="produto" id="produto">
+                <option value="1">Equipamento 1</option>
+                <option value="2">Equipamento 2</option>
+            
+            </select><br>
+          
+            <label for="marca">Marca:</label>
+            <input type="text" id="marca" name="marca" disabled><br>
+          
+            <label for="modelo">Modelo:</label>
+            <input type="text" id="modelo" name="modelo" disabled><br>
+          
+            <label for="tipo">Tipo:</label>
+            <input type="text" id="tipo" name="tipo" disabled><br>
+          
+            <label for="patrimonio">Patrimônio:</label>
+            <input type="text" id="patrimonio" name="patrimonio" required><br>
+          
+            <label for="serie">Série:</label>
+            <input type="text" id="serie" name="serie" required><br>
+          
+            <label for="observacao">Observação:</label>
+            <textarea id="observacao" name="observacao"></textarea><br>
+          
+            <button type="button" onclick="adicionarEquipamento()">Adicionar Equipamento</button>
+        </form>
+
+        <h2>Equipamentos Adicionados:</h2>
+        <table id="equipamentosTable">
+            <thead>
+                <tr>
+                    <th>Equipamento</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Tipo</th>
+                    <th>Patrimônio</th>
+                    <th>Série</th>
+                    <th>Observação</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table> 
+    </main>
+</body>
+</html>

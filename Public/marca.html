@@ -8,17 +8,17 @@
     <script src="./js/script.js"></script>
     <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
     <!--<script defer src="./js/validate.js"></script>-->
-    <script src="./js/equipamento.js"></script>
+    <!--<script src="./js/equipamento.js"></script>-->
 
 
-    <title>Cadastro Equipamentos</title>
+    <title>Marca</title>
 </head>
 <body>
     <header class="header">
         <nav class="nav">
                 <a href="./index.html"><img src="./IMG/logo.png" alt="Logo" class="logo"></a>
                   <ul class="nav-list">
-                    <li><a href="#">Cadastro de Equipamentos</a></li>
+                    <li><a href="#">Registro Marca</a></li>
                     <li><a href="./index.html"><i class="fas fa-home"></i></a></li>
                   </ul>
             </nav>
@@ -26,45 +26,21 @@
     </header>
         <main>
             
-            <h1>Formulário de Cadastro de Equipamentos</h1>
+            <h1>Formulário de Registro Marca</h1>
             
             <form id="equipamentoForm">
-                <label for="equipamento">Equipamento:</label>
-                <input type="text" id="equipamento" name="equipamento" required><br>
-              
+                             
                 <label for="marca">Marca:</label>
                 <select name="marca" id="marca"></select>
                 <!--<input type="text" id="marca" name="marca" required><br>-->
               
-                <label for="modelo">Modelo:</label>
-                <input type="text" id="modelo" name="modelo" required><br>
-              
-                <label for="tipo">Tipo:</label>
-                <select name="tipo">
-                    <option value=1>Micro</option>
-                    <option value=2>Impressora</option>
-                    <option value=3>Switch</option>
-                    <option value=4>Monitor</option>
-                </select>
-                <!--<input type="text" id="tipo" name="tipo" required><br>-->
-              
-                <label for="patrimonio">Patrimônio:</label>
-                <input type="text" id="patrimonio" name="patrimonio" required><br>
-              
-                <label for="serie">Série:</label>
-                <input type="text" id="serie" name="serie" required><br>
-              
-                <label for="observacao">Observação:</label>
-                <textarea id="observacao" name="observacao"></textarea><br>
-              
-                <button type="button" onclick="adicionarEquipamento()">Adicionar Equipamento</button>
+                <button type="button" onclick="adicionarMarca()">Adicionar Marca</button>
               </form>
 
-            <h2>Equipamentos Adicionados:</h2>
-            <table id="equipamentosTable">
+            <h2>Marcas Adicionadas:</h2>
+            <table id="marcaTable">
             <thead>
                 <tr>
-                <th>Equipamento</th>
                 <th>Marca</th>
                 <th>Modelo</th>
                 <th>Tipo</th>
