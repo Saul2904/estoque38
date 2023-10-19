@@ -5,9 +5,14 @@ const allBrands = async () => {
     return brands;
 };
 
+const oneBrand = async (brandId) => {
+    const brand = await connection.query(`SELECT * FROM tb_marca where mc_id = ${brandId}`);
+    return brand;
+};
+
 const cadBrand = async (brandName) =>{
     const brand = await connection.query(`INSERT INTO tb_marca(mc_nome) VALUES('${brandName}');`)
     return brand;
 }
 
-export { allBrands, cadBrand };
+export { allBrands, cadBrand, oneBrand };
