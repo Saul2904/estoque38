@@ -7,15 +7,19 @@
     <link rel="stylesheet" href="./CSS/style.css">
     <link rel="shortcut icon" href="./IMG/logo.png" type="image/x-icon">
     <script src="./js/script.js"></script>
-    <!--<script defer src="./js/validate.js"></script>-->
-    <title>Entrada</title>
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <script src="./js/validate.js"></script>
+    <script defer src="./js/marca.js"></script>
+
+
+<title>Marca</title>
 </head>
 <body>
     <header class="header">
         <nav class="nav">
                 <a href="./index.html"><img src="./IMG/logo.png" alt="Logo" class="logo"></a>
                   <ul class="nav-list">
-                    <li><a href="#">Entrada de Equipamentos</a></li>
+                    <li><a href="#">Registro Marca</a></li>
                     <li><a href="./index.html"><i class="fas fa-home"></i></a></li>
                   </ul>
             </nav>
@@ -23,28 +27,23 @@
     </header>
         <main>
             
-            <h1>Formulário de Entrada de Equipamentos !</h1>
+            <h1>Formulário de Registro Marca</h1>
             
-            <form id="equipamentoForm">
-                <label for="patrimonioConsulta">Número de Patrimônio:</label>
-                <input type="text" id="patrimonioConsulta" name="patrimonioConsulta" required><br>
-                <label for="patrimonioConsulta">Número de Serie:</label>
-                <input type="text" id="serieConsulta" name="serieConsulta" required><br>    
-                <button type="button" onclick="consultaEquipamento()">Consulta de Equipamento</button>
-                <a href="./cadastro.html"><button type="button" onclick="cadastroEquipamento()">Cadastro do Equipamento</button></a>
+            <form id="marca-form">
+                             
+                <label for="marca">Marca:</label>
+                <input name="marca" id="marca">
+                <!--<input type="text" id="marca" name="marca" required><br>-->
+              
+                <button type="submit" id="addMarca">Adicionar Marca</button>
               </form>
 
-            <h2>Equipamentos Adicionados:</h2>
-            <table id="equipamentosTable">
+            <h2>Marcas Adicionadas:</h2>
+            <table id="marcaTable">
             <thead>
                 <tr>
-                <th>Equipamento</th>
-                <th>Marca</th>
-                <th>Modelo</th>
-                <th>Tipo</th>
-                <th>Patrimônio</th>
-                <th>Série</th>
-                <th>Observação</th>
+                    <th>ID</th>
+                    <th>Marca</th>
                 </tr>
             </thead>
             <tbody></tbody>

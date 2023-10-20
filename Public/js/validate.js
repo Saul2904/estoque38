@@ -11,9 +11,10 @@ const validateLogin = ()=>{
 document.addEventListener('DOMContentLoaded',()=> {
     validateLogin();
 });
-
+/*
 const btnLogout = document.getElementById('logout');
 btnLogout.addEventListener('click',()=>{
     logOut();
     validateLogin();
 })
+*/
