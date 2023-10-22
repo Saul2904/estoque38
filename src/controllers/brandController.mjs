@@ -11,11 +11,15 @@ const getAllBrands = async (req, res) => {
 
 const registerBrand = async (req, res) =>{
  try{
-    console.log(req.body.brand);
     const resultRegister = await cadBrand(req.body.brand);
     return res.status(201).json(resultRegister.rowCount);
-  }catch{
-    return res.status(400).json({"message":"Falha ao realizar o cadastro"});
+  }catch(err){
+    if(err.code=='23505'){
+      return res.status(403).json({"message":`A marca ${req.body.brand} já existe e não pode ser cadastrada novamente!`});
+    }else{
+      return res.status(400).json({"message":`Falha na requisição`});
+    }
+    
   }
 }
 

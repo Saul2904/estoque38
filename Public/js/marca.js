@@ -1,7 +1,5 @@
-const alimentarTabela = (vetor) =>{
+const alimentarTabela = async (vetor) =>{
     const marcaTable= document.getElementById('marcaTable').getElementsByTagName('tbody')[0];
-    
-    
     vetor.forEach((linha) => {
         const newRow = marcaTable.insertRow();
         Object.values(linha).forEach((coluna) =>{
@@ -43,14 +41,15 @@ document.addEventListener('DOMContentLoaded', async function () {
             },
             body: JSON.stringify({ 'brand':nomeMarca })
         });
-        console.log(response.status);
         if (response.status == 201) {
-            const data = await response.json();
-            marcas = await carregarMarcas();
-            alimentarTabela(marcas);
-
+            const marcas = carregarMarcas();
+            var bodyRef = document.getElementById('marcaTable').getElementsByTagName('tbody')[0]; 
+            bodyRef.innerHTML = '';
+            alimentarTabela(await marcas);
         } else {
-            console.log("Erro");
+            const message = await response.json();
+            console.log(message);
+            alert(`Erro ${response.status}, ${message.message}`);
         }
     });
 });
