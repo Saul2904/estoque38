@@ -10,13 +10,16 @@ document.addEventListener('DOMContentLoaded', async function () {
     marcaForm.addEventListener('submit', async function (event) {
         event.preventDefault();
         const nomeMarca = document.getElementById('marca').value;
-        const response = cadastrarMarca();
+        const response = await cadastrarMarca(nomeMarca);
+        console.log(await response);
         if (response.status == 201) {
             marcas = carregarMarcas();
             limparTabela(tabela);
             alimentarTabela(await marcas,tabela);
         } else {
+            
             const message = await response.json();
+            
             alert(`Erro ${response.status}, ${message.message}`);
         }
 });

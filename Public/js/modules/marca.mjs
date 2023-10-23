@@ -12,7 +12,7 @@ const carregarMarcas = async ()=>{
     }
 }
 
-const cadastrarMarca = async ()=>{
+const cadastrarMarca = async (nomeMarca)=>{
     const response = await fetch('http://127.0.0.1:3333/cadBrand', {
         method: 'POST',
         headers: {
@@ -21,5 +21,6 @@ const cadastrarMarca = async ()=>{
         },
         body: JSON.stringify({ 'brand':nomeMarca })
     });
+    return response;
 }
 export {carregarMarcas, cadastrarMarca}
