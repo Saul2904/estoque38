@@ -1,5 +1,5 @@
 const carregarMarcas = async ()=>{
-    const response = await fetch('http://127.0.0.1:3333/getAllBrands', {
+    const response = await fetch('http://127.0.0.1:3333/brands', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -13,7 +13,7 @@ const carregarMarcas = async ()=>{
 }
 
 const cadastrarMarca = async (nomeMarca)=>{
-    const response = await fetch('http://127.0.0.1:3333/cadBrand', {
+    const response = await fetch('http://127.0.0.1:3333/brand', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

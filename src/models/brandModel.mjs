@@ -15,4 +15,9 @@ const cadBrand = async (brandName) =>{
     return brand;
 }
 
-export { allBrands, cadBrand, oneBrand };
+const updateBrand = async (brandId,brandName) =>{
+    const brand = await connection.query(`UPDATE tb_marca SET mc_nome = '${brandName}' WHERE mc_id = ${brandId}`);
+    return brand;
+}
+
+export { allBrands, cadBrand, oneBrand, updateBrand };
