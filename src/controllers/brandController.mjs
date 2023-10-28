@@ -11,7 +11,8 @@ const getBrands = async (req, res) => {
 
 const getBrand = async(req, res) => {
   try{
-    const valor = (await oneBrand(req.params.id)).rows;
+    const { id } = req.params;
+    const valor = (await oneBrand(id)).rows;
     return res.status(200).json(valor);
   }catch{
     return res.status(401).json({"message":"Falha na requisição"});
@@ -31,7 +32,7 @@ const registerBrand = async (req, res) =>{
   }
 }
 
-const updateBrands = async (req, res) =>{
+const putBrand = async (req, res) =>{
   try{
     const id = req.params.id;
     const brand = req.body.brand;
@@ -42,4 +43,4 @@ const updateBrands = async (req, res) =>{
   }
 }
 
-export { getBrands, registerBrand, getBrand, updateBrands };
+export { getBrands, registerBrand, getBrand, putBrand };

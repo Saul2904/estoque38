@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', async function () {
     const tabela = document.getElementById('marcaTable');
     alimentarTabela(await marcas, tabela);
     const marcaForm = document.getElementById('marca-form');
-    
     marcaForm.addEventListener('submit', async function (event) {
         event.preventDefault();
         const nomeMarca = document.getElementById('marca').value;
@@ -17,9 +16,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             limparTabela(tabela);
             alimentarTabela(await marcas,tabela);
         } else {
-            
             const message = await response.json();
-            
             alert(`Erro ${response.status}, ${message.message}`);
         }
 });
