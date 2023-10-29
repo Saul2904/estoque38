@@ -15,7 +15,7 @@ const oneProduct = async (prodId) => {
 };
 
 const cadProduct = async (prodBrand, prodType, prodModel, prodDesc) =>{
-    const brand = await connection.query(`INSERT INTO tb_produto(pr_marca, pr_tipo,  pr_modelo, pr_descricao) 
+    const product = await connection.query(`INSERT INTO tb_produto(pr_marca, pr_tipo,  pr_modelo, pr_descricao) 
     VALUES(${prodBrand}, ${prodType}, '${prodModel}', '${prodDesc}');`)
     return product;
 }
