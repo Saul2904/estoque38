@@ -23,4 +23,18 @@ const cadastrarMarca = async (nomeMarca)=>{
     });
     return response;
 }
-export {carregarMarcas, cadastrarMarca}
+
+const atualizarMarca = async (id_marca,nomeMarca)=>{
+    const response = await fetch(`http://127.0.0.1:3333/brand/${id_marca}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+            'x-access-token': localStorage.getItem('token')
+        },
+        body: JSON.stringify({ 'brand':nomeMarca })
+    });
+    return response;
+}
+
+
+export {carregarMarcas, cadastrarMarca, atualizarMarca}
