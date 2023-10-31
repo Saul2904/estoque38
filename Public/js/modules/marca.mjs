@@ -21,6 +21,9 @@ const cadastrarMarca = async (nomeMarca)=>{
         },
         body: JSON.stringify({ 'brand':nomeMarca })
     });
+    if(response.status == 201){
+        response.message = "Cadastro realizado com sucesso";
+    }
     return response;
 }
 
@@ -33,6 +36,9 @@ const atualizarMarca = async (id_marca,nomeMarca)=>{
         },
         body: JSON.stringify({ 'brand':nomeMarca })
     });
+    if(response.status == 202){
+        response.message = "Alteração realizada com sucesso";
+    }
     return response;
 }
 

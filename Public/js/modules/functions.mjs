@@ -5,7 +5,8 @@ const editButton = (linha,campos)=>{
     const chaves = Object.keys(linha);
     button.addEventListener('click', function() {
         for(let i = 0; i < campos.length;i++){
-            document.getElementById(campos[i]).setAttribute("value",linha[chaves[i]]);
+            //document.getElementById(campos[i]).setAttribute("value",linha[chaves[i]]);
+            document.getElementById(campos[i]).value = linha[chaves[i]];
         }
     });
     return button;
