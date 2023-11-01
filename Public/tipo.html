@@ -8,6 +8,7 @@
     <script src="./js/script.js"></script>
     <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
     <link rel="shortcut icon" href="./IMG/logo.png" type="image/x-icon">
+    <script type="module" src="./js/tipo.js"></script>
     <!--<script defer src="./js/validate.js"></script>-->
     <!--<script src="./js/equipamento.js"></script>-->
 
@@ -29,7 +30,10 @@
             
             <h1>Tipo de Equipamentos</h1>
             
-            <form id="equipamentoForm">
+            <form id="tipoForm">
+
+                <label for="id_tipo">Id:</label>
+                <input name="id_tipo" id="id_tipo" disabled>
                
                 <label for="tipo">Tipo:</label>
                 <input name="tipo" id="tipo" >
@@ -37,17 +41,17 @@
                 <!--<input type="text" id="tipo" name="tipo" required><br>-->
               
               
-                <button type="button" onclick="adicionarTipo()">Adicionar Tipo</button>
+                <button type="submit">Adicionar Tipo</button>
+                <button type="button" id="limpar">Limpar</button>
               </form>
 
             <h2>Equipamentos Adicionados:</h2>
             <table id="tipoTable">
             <thead>
                 <tr>
-                <th>Tipo</th>
-                <th>Patrimônio</th>
-                <th>Série</th>
-                <th>Observação</th>
+                    <th>ID</th>
+                    <th>Tipo</th>
+                    <th>Ação</th>
                 </tr>
             </thead>
             <tbody></tbody>

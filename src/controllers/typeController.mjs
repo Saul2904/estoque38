@@ -4,7 +4,8 @@ const getTypes = async (req, res) => {
     try{
         const valores = (await allTypes()).rows;
         return res.status(200).json(valores);
-    }catch{
+    }catch(err){
+       console.log(err);
         return res.status(401).json({"message":"Falha na requisição"});
     }
 };

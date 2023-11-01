@@ -2,7 +2,7 @@ import connection from './connection.mjs';
 
 const allTypes = async () => {
     const types = await connection.query(`SELECT * FROM tb_tipo`);
-    return brands;
+    return types;
 };
 
 const oneType = async (typeId) => {
