@@ -1,9 +1,9 @@
 import connection from './connection.mjs';
 
 const allProducts = async () => {
-    const products = await connection.query(`SELECT pr_id, mc_id,mc_nome, tp_id,tp_descricao, pr_modelo, pr_descricao FROM tb_produto p
-    LEFT JOIN tb_marca m ON p.pr_marca = m.mc_id
-    LEFT JOIN tb_tipo t ON p.pr_tipo = t.tp_id;`);
+    const products = await connection.query(`SELECT pd_id, mc_id,mc_nome, tp_id,tp_descricao, pd_modelo, pd_descricao FROM tb_produto p
+    LEFT JOIN tb_marca m ON p.pd_marca = m.mc_id
+    LEFT JOIN tb_tipo t ON p.pd_tipo = t.tp_id;`);
     return products;
 };
 

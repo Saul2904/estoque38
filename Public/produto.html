@@ -10,8 +10,6 @@
     <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
     <!--<script defer src="./js/validate.js"></script>-->
      <script type="module" src="./js/produto.js"></script>
-
-
     <title>Produto</title>
 </head>
 <body>
@@ -33,26 +31,18 @@
 
                 <label for="marca">Marca:</label>
                 <select name="marca" id="marca"></select>
-                <!--<input type="text" id="marca" name="marca" required><br>-->
               
                 <label for="modelo">Modelo:</label>
                 <input type="text" id="modelo" name="modelo" required><br>
               
                 <label for="tipo">Tipo:</label>
-                <select name="tipo">
-                    <option value=1>Micro</option>
-                    <option value=2>Impressora</option>
-                    <option value=3>Switch</option>
-                    <option value=4>Monitor</option>
-                </select>
-                <!--<input type="text" id="tipo" name="tipo" required><br>-->
-              
+                <select name="tipo" id="tipo"></select>              
               
                 <button type="button" onclick="adicionarEquipamento()">Adicionar Produto</button>
               </form>
 
             <h2>Equipamentos Adicionados:</h2>
-            <table id="equipamentosTable">
+            <table id="produtoTable">
             <thead>
                 <tr>
                 <th>Marca</th>
