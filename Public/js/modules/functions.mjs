@@ -20,12 +20,14 @@ const editButton = (linha,campos)=>{
 const alimentarTabela = async (vetor, tabela, campos) =>{
     const tableBody= tabela.getElementsByTagName('tbody')[0];
     vetor.forEach((linha) => {
+        
         linha.acao = "Editar";
         const newRow = tableBody.insertRow();
-        Object.values(linha).forEach((coluna) =>{
+        Object.values(linha).forEach((value, key) =>{
             const cell = newRow.insertCell();
-            if(coluna != "Editar"){
-                cell.textContent = coluna;
+            if(value != "Editar"){
+                cell.textContent = value;
+                cell.setAttribute("name",`td_${key}`)
             }else{
                 cell.appendChild(editButton(linha, campos));
             }

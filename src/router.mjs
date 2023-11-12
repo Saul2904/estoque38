@@ -31,9 +31,9 @@ router.route('/product/:id')
     .put(verifyJWT, putProduct)
 
 //equipament
-router.get('/equipaments', verifyJWT, getEquipments);
-router.post('/equipament',verifyJWT, registerEquipment);
-router.route('/equipament/:id')
+router.get('/equipments', verifyJWT, getEquipments);
+router.post('/equipment',verifyJWT, registerEquipment);
+router.route('/equipment/:id')
     .get(verifyJWT, getEquipment)
     .put(verifyJWT, putEquipment)
 

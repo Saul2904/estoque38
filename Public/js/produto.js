@@ -10,15 +10,27 @@ const marcas =  carregarMarcas();
 const tipos = carregarTipos();
 let produtos = carregarProdutos();
 
+const ocultarColunas = ((ocultar, tabela)=>{
+    let celulas = tabela.getElementsByTagName('td');
+    Object.values(celulas).forEach((celula) =>{
+        if(ocultar.includes(celula.getAttribute("name"))){
+            celula.setAttribute("class","hiden");
+        }
+    });
+})
+
 addEventListener('DOMContentLoaded',async ()=>{
-    const campos = ['idProd','marca', 'tipo','modelo', 'descricao'];
     const tabela = document.getElementById('produtoTable');
+    const prodForm = document.getElementById('produtoForm');
+
+    const ocultar = ["td_1","td_3"];
+    const campos = ['idProd','marca', 'tipo','modelo', 'descricao'];
 
     alimentarSelect(await marcas,'marca','mc_id', 'mc_nome');
     alimentarSelect(await tipos,'tipo','tp_id', 'tp_descricao');
     alimentarTabela(await produtos, tabela,campos);
 
-    const prodForm = document.getElementById('produtoForm');
+    ocultarColunas(ocultar, tabela);
 
     prodForm.addEventListener('submit', async function (event) {
         event.preventDefault();
@@ -39,6 +51,7 @@ addEventListener('DOMContentLoaded',async ()=>{
             limparTabela(tabela);
             prodForm.reset();
             alimentarTabela(await produtos, tabela,campos);
+            ocultarColunas(ocultar, tabela);
             
         } else {
             const message = await response.json();

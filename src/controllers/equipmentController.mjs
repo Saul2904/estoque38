@@ -24,6 +24,7 @@ const registerEquipment = async (req, res) =>{
     const resultRegister = await cadEquipment(product, patrimony, serial, observation);
     return res.status(201).json(resultRegister.rowCount);
   }catch(err){
+    console.log(err)
     if(err.code=='23505'){
       return res.status(403).json({"message":`O equipamento de patrimônio ${patrimony} e/ou serial ${serial} já existe e não pode ser cadastrado novamente!`});
     }else{
@@ -38,7 +39,7 @@ const putEquipment = async (req, res) =>{
     const {product, patrimony, serial, observation} = req.body;
     const resultUpdate = await updateEquipment(id, product, patrimony, serial, observation);
     return res.status(202).json(resultUpdate.rowCount);
-  }catch{
+  }catch(err){
     return res.status(400).json({"message":`Falha na requisição`});
   }
 }

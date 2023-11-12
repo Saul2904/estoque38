@@ -6,10 +6,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./CSS/style.css">
     <link rel="shortcut icon" href="./IMG/logo.png" type="image/x-icon">
-    <script src="./js/script.js"></script>
     <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
     <!--<script defer src="./js/validate.js"></script>-->
-    <script src="./js/equipamento.js"></script>
+    <script type="module" src="./js/equipamento.js"></script>
 
 
     <title>Cadastro Equipamentos</title>
@@ -28,12 +27,11 @@
         <h1>Formulário de Cadastro de Equipamentos</h1>
         
         <form id="equipamentoForm">
+            <label for="idEquip">Id:</label>
+            <input type="text" name="idEquip" id="idEquip" disabled></input><br>
+
             <label for="produto">Produto:</label>
-            <select name="produto" id="produto">
-                <option value="1">Equipamento 1</option>
-                <option value="2">Equipamento 2</option>
-            
-            </select><br>
+            <select name="produto" id="produto"></select><br>
           
             <label for="marca">Marca:</label>
             <input type="text" id="marca" name="marca" disabled><br>
@@ -53,20 +51,22 @@
             <label for="observacao">Observação:</label>
             <textarea id="observacao" name="observacao"></textarea><br>
           
-            <button type="button" onclick="adicionarEquipamento()">Adicionar Equipamento</button>
+            <button type="submit">Adicionar Equipamento</button>
+            <button type="reset" id="limpar">Limpar</button>
         </form>
 
         <h2>Equipamentos Adicionados:</h2>
         <table id="equipamentosTable">
             <thead>
                 <tr>
-                    <th>Equipamento</th>
+                    <th>Id</th>
+                    <th>Tipo</th>
                     <th>Marca</th>
                     <th>Modelo</th>
-                    <th>Tipo</th>
                     <th>Patrimônio</th>
                     <th>Série</th>
                     <th>Observação</th>
+                    <th>Ação</th>
                 </tr>
             </thead>
             <tbody></tbody>
