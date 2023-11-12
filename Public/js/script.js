@@ -1,7 +1,13 @@
 const hamburger = document.querySelector(".hamburger");
 const nav = document.querySelector(".nav");
+const logOut = document.getElementById("logout");
 
 hamburger.addEventListener("click", () => nav.classList.toggle("active"));
+
+logOut.addEventListener("click",() => {
+  localStorage.removeItem('token');
+  window.location.href = 'login.html';
+});
 
 
 function adicionarEquipamento() {

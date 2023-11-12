@@ -9,10 +9,3 @@ const validateLogin = ()=>{
 }
 
 export {logOut, validateLogin}
-/*
-const btnLogout = document.getElementById('logout');
-btnLogout.addEventListener('click',()=>{
-    logOut();
-    validateLogin();
-})
-*/

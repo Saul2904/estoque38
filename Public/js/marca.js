@@ -1,19 +1,16 @@
 import { validateLogin } from "./modules/validate.mjs"
-import { alimentarTabela, limparTabela } from "./modules/functions.mjs";
+import { alimentarTabela, limparTabela, alimentarSelect } from "./modules/functions.mjs";
 import { carregarMarcas,cadastrarMarca,atualizarMarca } from "./modules/marca.mjs";
 
 validateLogin();
+
+let marcas = carregarMarcas();
+
 document.addEventListener('DOMContentLoaded', async function () {
-    let marcas = carregarMarcas();
     const campos = ['id_marca', 'marca'];
     const tabela = document.getElementById('marcaTable');
     alimentarTabela(await marcas, tabela,campos);
     const marcaForm = document.getElementById('marca-form');
-
-    document.getElementById('limpar').addEventListener('click', ()=>{
-        document.getElementById('marca').value = "";
-        document.getElementById('id_marca').value = "";
-    })
 
     marcaForm.addEventListener('submit', async function (event) {
         event.preventDefault();
@@ -29,9 +26,8 @@ document.addEventListener('DOMContentLoaded', async function () {
             marcas = carregarMarcas();
             limparTabela(tabela);
             alert(response.message);
+            marcaForm.reset();
             alimentarTabela(await marcas,tabela, campos);
-            document.getElementById('marca').value = "";
-            document.getElementById('id_marca').value = "";
         } else {
             const message = await response.json();
             alert(`Erro ${response.status}, ${message.message}`);

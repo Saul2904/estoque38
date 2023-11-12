@@ -7,13 +7,8 @@ document.addEventListener('DOMContentLoaded', async function () {
     let tipos = carregarTipos();
     const campos = ['id_tipo', 'tipo'];
     const tabela = document.getElementById('tipoTable');
-    alimentarTabela(await tipos, tabela,campos);
     const tipoForm = document.getElementById('tipoForm');
-
-    document.getElementById('limpar').addEventListener('click', ()=>{
-        document.getElementById('tipo').value = "";
-        document.getElementById('id_tipo').value = "";
-    })
+    alimentarTabela(await tipos, tabela,campos);
 
     tipoForm.addEventListener('submit', async function (event) {
         event.preventDefault();
@@ -29,9 +24,8 @@ document.addEventListener('DOMContentLoaded', async function () {
             tipos = carregarTipos();
             limparTabela(tabela);
             alert(response.message);
+            tipoForm.reset();
             alimentarTabela(await tipos,tabela, campos);
-            document.getElementById('tipo').value = "";
-            document.getElementById('id_tipo').value = "";
         } else {
             const message = await response.json();
             alert(`Erro ${response.status}, ${message.message}`);
