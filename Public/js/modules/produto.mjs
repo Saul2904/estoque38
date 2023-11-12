@@ -12,14 +12,14 @@ const carregarProdutos = async ()=>{
     }
 }
 
-const cadastrarPrpduto = async (marca, tipo, modelo, descricao)=>{
+const cadastrarProduto = async (marca, tipo, modelo, descricao)=>{
     const response = await fetch('http://127.0.0.1:3333/product', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
             'x-access-token': localStorage.getItem('token')
         },
-        body: JSON.stringify({ 'brand':marca,'type':tipo,'model':modelo,'desc':descricao})
+        body: JSON.stringify({ 'brand':marca, 'type':tipo, 'model':modelo, 'desc':descricao })
     });
     if(response.status == 201){
         response.message = "Cadastro realizado com sucesso";
@@ -27,14 +27,14 @@ const cadastrarPrpduto = async (marca, tipo, modelo, descricao)=>{
     return response;
 }
 
-const atualizarTipo = async (idTipo,descTipo)=>{
-    const response = await fetch(`http://127.0.0.1:3333/type/${idTipo}`, {
+const atualizarProduto = async (idProduto,marca, tupo, modelo, descricao)=>{
+    const response = await fetch(`http://127.0.0.1:3333/type/${idProduto}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
             'x-access-token': localStorage.getItem('token')
         },
-        body: JSON.stringify({ 'type':descTipo})
+        body: JSON.stringify({  'brand':marca, 'type':tipo, 'model':modelo, 'desc':descricao})
     });
     if(response.status == 202){
         response.message = "Alteração realizada com sucesso";
@@ -42,4 +42,4 @@ const atualizarTipo = async (idTipo,descTipo)=>{
     return response;
 }
 
-export {carregarTipos, cadastrarTipo, atualizarTipo}
+export {carregarProdutos, cadastrarProduto, atualizarProduto}
