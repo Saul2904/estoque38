@@ -27,6 +27,7 @@ const registerProduct = async (req, res) =>{
     if(err.code=='23505'){
       return res.status(403).json({"message":`O produto já existe e não pode ser cadastrado novamente!`});
     }else{
+      console.log(err);
       return res.status(400).json({"message":`Falha na requisição`});
     }
   }

@@ -32,4 +32,11 @@ const updateEquipment = async (equipId,equipProd, equipPatrimonio, equipSerial, 
     return equipment;
 }
 
-export { allEquipments , cadEquipment, oneEquipment, updateEquipment };
+const searcEquipment = async (valueSearch) =>{
+    const query = `SELECT eq_id, eq_produto, eq_patrimonio, eq_serial, eq_observacao FROM tb_equipamento WHERE ${valueSearch};`
+    console.log(query);
+    const equipment = await connection.query(query);
+    return equipment;
+}
+
+export { allEquipments , cadEquipment, oneEquipment, updateEquipment, searcEquipment };

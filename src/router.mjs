@@ -3,7 +3,7 @@ import { login } from './controllers/userController.mjs';
 import { getBrands, registerBrand, getBrand, putBrand} from './controllers/brandController.mjs';
 import { getTypes, registerType, getType, putType } from './controllers/typeController.mjs';
 import { getProducts, registerProduct, getProduct, putProduct } from './controllers/productController.mjs';
-import { getEquipments, registerEquipment, getEquipment, putEquipment } from './controllers/equipmentController.mjs';
+import { getEquipments, registerEquipment, getEquipment, putEquipment, searchEquipment } from './controllers/equipmentController.mjs';
 import { getMovements, registerMovement, getMovement, putMovement } from './controllers/movementController.mjs';
 import verifyJWT from './middleware.mjs';
 
@@ -33,6 +33,8 @@ router.route('/product/:id')
 //equipament
 router.get('/equipments', verifyJWT, getEquipments);
 router.post('/equipment',verifyJWT, registerEquipment);
+router.get('/equipment/patrimony/:patrimony',verifyJWT,searchEquipment);
+router.get('/equipment/serial/:serial',verifyJWT,searchEquipment);
 router.route('/equipment/:id')
     .get(verifyJWT, getEquipment)
     .put(verifyJWT, putEquipment)

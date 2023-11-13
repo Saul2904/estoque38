@@ -1,6 +1,6 @@
 import { validateLogin } from "./modules/validate.mjs"
 import { carregarProdutos } from "./modules/produto.mjs";
-import { carregarEquipamentos, cadastrarEquipamento, atualizarEquipamento  } from "./modules/equipamento.mjs";
+import { carregarEquipamentos, cadastrarEquipamento, atualizarEquipamento, buscarEquipamento  } from "./modules/equipamento.mjs";
 import { alimentarTabela, limparTabela, alimentarSelect } from "./modules/functions.mjs";
 
 validateLogin();
@@ -30,7 +30,7 @@ const preencherCampos = ((produtos, selectProd)=>{
 addEventListener('DOMContentLoaded',async ()=>{
     const tabela = document.getElementById('equipamentosTable');
     const equipForm = document.getElementById('equipamentoForm');
-
+    console.log(await buscarEquipamento('','dfgfdgdf'));
     const id = document.getElementById('idEquip');
     const selectProd = document.getElementById('produto');
     const marca = document.getElementById('marca');
